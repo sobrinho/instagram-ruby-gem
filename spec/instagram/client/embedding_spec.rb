@@ -4,6 +4,7 @@ describe Instagram::Client do
   Instagram::Configuration::VALID_FORMATS.each do |format|
     context ".new(:format => '#{format}')" do
       before do
+        Instagram.endpoint = "https://api.instagram.com/"
         @client = Instagram::Client.new(:format => format, :client_id => 'CID', :client_secret => 'CS', :access_token => 'AT')
       end
 
